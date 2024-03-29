@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { getUserAuth } from "@/lib/auth/utils";
 import Link from "next/link";
 
+
 export default async function Home() {
   const userAuth = await getUserAuth();
   return (
@@ -10,7 +11,7 @@ export default async function Home() {
         <Button variant="outline">Account and Billing</Button>
       </Link>
       <pre className="bg-secondary p-4 rounded-sm shadow-sm text-secondary-foreground break-all whitespace-break-spaces">
-        {JSON.stringify(userAuth, null, 2)}
+        <h1> Dashboard</h1>
       </pre>
     </main>
   );
