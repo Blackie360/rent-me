@@ -71,7 +71,7 @@ export default function LandingPage() {
                   Key Features
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Streamlined Ticketing and Rapid Event Managemen
+                Streamlined Ticketing & Event Management
                 </h2>
                 <p className="max-w-[900px] text-neutral-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-neutral-400">
                 Accelerate your event management with our platform. Streamline ticketing processes and empower admins to effortlessly post and update events. Let your team concentrate on enhancing user experiences and expanding event offerings, while our automated CI/CD handles the backend seamlessly.
