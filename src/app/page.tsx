@@ -7,29 +7,12 @@ import Link from "next/link";
 import oneImage from "../../public/one.jpg"
 import twoImage from "../../public/two.jpg"
 import Image from 'next/image'
+import TopNav from "@/components/TopNav";
+
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
-          <MountainIcon className="h-6 w-6" />
-          <span className="sr-only sm:not-sr-only gap-1 text-white">Ticko</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#features"
-          >
-            Features
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="/sign-in"
-          >
-            Sign In
-          </Link>
-        </nav>
-      </header>
+      <TopNav/>
       <main className="flex-1">
         <section className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
@@ -54,15 +37,87 @@ export default function LandingPage() {
                   </Link>
                   <Link
                     className="inline-flex h-10 items-center justify-center rounded-md border border-neutral-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:ring-neutral-300"
-                    href="#"
+                    href="/menu"
                   >
-                    Contact Sales
+                    Events
                   </Link>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <section>
+  <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <header className="text-center">
+    <h2 className="text-xl font-bold text-gray-900 sm:text-4xl">Featured Events</h2>
+      <p className="max-w-[900px] text-neutral-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-neutral-400 text-xl">
+       Grab 2 tickets on any event get a discount
+      </p>
+    </header>
+
+    <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+      <li>
+        <a href="#" className="group relative block mb-4">
+          <img
+            src="https://storage.googleapis.com/m_tickets/assets/event_poster/maseke-ya-nai2024-02-26T20-38-42.989710.jpg"
+            alt=""
+            className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+          />
+
+          <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+            {/* <h3 className="text-xl font-medium text-white">Casual Trainers</h3> */}
+
+            <span
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+            >
+              Get Tickets
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" className="group relative block mb-4">
+          <img
+           src="https://storage.googleapis.com/m_tickets/assets/event_poster/park-and-chill-naivasha2024-03-29T20-36-13.894109.jpeg"
+            alt=""
+            className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+          />
+
+          <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+            {/* <h3 className="text-xl font-medium text-white">Winter Jumpers</h3> */}
+
+            <span
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+            >
+             Get Tickets
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <a href="#" className="group relative block ">
+          <img
+            src="https://storage.googleapis.com/m_tickets/assets/event_poster/light-shift-2024-03-18T13-33-09.278952.jpeg"
+            alt=""
+            className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+          />
+
+          <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+            {/* <h3 className="text-xl font-medium text-white">Skinny Jeans Blue</h3> */}
+
+            <span
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+            >
+              Get Tickets
+            </span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
