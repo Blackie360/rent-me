@@ -49,10 +49,10 @@ export default function LandingPage() {
         <section>
   <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
     <header className="text-center">
-    <h2 className="text-xl font-bold text-white sm:text-4xl">Featured Events</h2>
-      <p className="max-w-[900px] text-neutral-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-neutral-400 text-xl text-center">
+    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Featured Events</h2>
+    {/* <p className="max-w-[900px] text-neutral-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-neutral-400">
        Grab 2 tickets on any event get a discount
-      </p>
+      </p> */}
     </header>
 
     <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
