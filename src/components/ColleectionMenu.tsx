@@ -8,8 +8,7 @@ function ColleectionMenu() {
       <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">New Collection</h2>
 
       <p className="mx-auto mt-4 max-w-md text-gray-500">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure
-        dicta incidunt est ipsam, officia dolor fugit natus?
+        Find out the most trending and most talked about events and festivals on e-ticko, a platform that offers the best events management and afforadble tickets in town.
       </p>
     </header>
 
