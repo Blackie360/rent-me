@@ -1,5 +1,7 @@
 import React from "react";
-import { PaystackButton, PaystackProps } from 'react-paystack';
+import { PaystackButton } from 'react-paystack';
+import { PaystackProps } from "react-paystack/dist/types";
+
 
 interface PaymentMethodProps {
   amount: number;
@@ -14,12 +16,12 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({ amount, onSuccess }) => {
     publicKey: 'pk_test_a7961d4fbeaf8f2da658a5cd92df761415594574',
     currency: 'KES',
     channels: ['card', 'mobile_money'],
-    onSuccess: () => {
-      onSuccess(); // Call the callback function
-    },
-    onClose: () => {
-      // Handle close event if needed
-    }
+    // onSuccess: () => {
+    //   onSuccess(); // Call the callback function
+    // },
+    // onClose: () => {
+    //   // Handle close event if needed
+    // }
   };
 
   return (
