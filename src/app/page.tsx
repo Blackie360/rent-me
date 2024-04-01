@@ -8,13 +8,32 @@ import Link from "next/link";
 import oneImage from "../../public/one.jpg"
 import twoImage from "../../public/two.jpg"
 import Image from 'next/image'
-import TopNav from "@/components/TopNav";
+
 
 
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <TopNav/>
+       <header className="px-4 lg:px-6 h-14 flex items-center">
+        <Link className="flex items-center justify-center" href="/">
+          <MountainIcon className="h-6 w-6" />
+          <span className="sr-only sm:not-sr-only gap-1 text-white">e-ticko</span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#features"
+          >
+            Features
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="/sign-in"
+          >
+            Sign In
+          </Link>
+        </nav>
+      </header>
 
       <main className="flex-1">
         <section className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48">
