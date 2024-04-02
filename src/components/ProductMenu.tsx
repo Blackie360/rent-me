@@ -48,7 +48,7 @@ function ProductMenu() {
       id: 6,
       imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/boomfest-20242024-03-19T19-52-14.390272.jpg",
       name: "BOOMFEST 2024",
-      price: "ksh. 0/-",
+      price: "ksh. 3000/-",
       location: "THE A.S.K DOME",
       isNew: true
     },

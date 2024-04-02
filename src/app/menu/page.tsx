@@ -2,11 +2,26 @@
 import React, { useState } from 'react';
 import TopNav from '@/components/TopNav';
 import ProductMenu from '@/components/ProductMenu';
-import PaymentMethod from '../../components/payment'; // Import PaymentMethod component
-import {Input} from '@/components/ui/input'; // Import reusable input component
-import {Button} from '@/components/ui/button'; // Import reusable button component
+import PaymentMethod from '../../components/payment';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
-function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyTickets, onClose }) {
+interface Product {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+}
+
+interface Props {
+  product: Product;
+  ticketCount: number;
+  onTicketCountChange: (count: number) => void;
+  onBuyTickets: (data: any) => void;
+  onClose: () => void;
+}
+
+function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyTickets, onClose }: Props) {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [ticketCategory, setTicketCategory] = useState('Regular');
@@ -33,7 +48,7 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
             type="number"
             id="ticketCount"
             value={ticketCount}
-            onChange={(e) => onTicketCountChange(e.target.value)}
+            onChange={(e) => onTicketCountChange(parseInt(e.target.value))}
             className="border border-gray-300 rounded-md px-3 py-1"
           />
         </div>
@@ -79,7 +94,6 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
         </div>
         <div className="mt-4 flex justify-around gap-4">
           <Button onClick={onClose} className="bg-gray-300 mt-14 hover:bg-slate-900 hover:text-white px text-gray-800 font-bold rounded-md ">Close</Button>
-          {/* Utilize PaymentMethod component */}
           <PaymentMethod amount={product.price * ticketCount} onSuccess={handleBuyTickets} />
         </div>
       </div>
@@ -88,12 +102,11 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
 }
 
 function Page() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [ticketCount, setTicketCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
 
-  const products = [
-    // Your product data here
+  const products: Product[] = [
     {
       id: 1,
       name: "Vasha Fest",
@@ -120,13 +133,13 @@ function Page() {
     },
   ];
 
-  const handleProductClick = (product) => {
+  const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
     setShowModal(true);
   };
 
-  const handleTicketCountChange = (count) => {
-    setTicketCount(parseInt(count));
+  const handleTicketCountChange = (count: number) => {
+    setTicketCount(count);
   };
 
   const handleCloseModal = () => {
@@ -161,9 +174,10 @@ function Page() {
           <div className="flex items-center justify-center h-screen">
             <div className="bg-white rounded-lg p-6">
               <ProductDetailsModal
-                product={selectedProduct}
+                product={selectedProduct!}
                 ticketCount={ticketCount}
                 onTicketCountChange={handleTicketCountChange}
+                onBuyTickets={(data) => console.log(data)} // Example onBuyTickets function, replace with actual implementation
                 onClose={handleCloseModal}
               />
             </div>
