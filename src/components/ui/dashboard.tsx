@@ -242,7 +242,7 @@ export function Dashboard() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Events Sales</CardTitle>
+              <CardTitle>Event Sales</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-8">
               <div className="flex items-center gap-4">
