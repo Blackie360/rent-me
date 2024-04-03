@@ -6,6 +6,15 @@ import PaymentMethod from '../../components/payment';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+
 interface Product {
   id: number;
   name: string;
@@ -38,8 +47,14 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-75">
       <div className="bg-white overflow-y-auto z-50 rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">{product.name}</h2>
-        <img src={product.image} alt={product.name} className="mt-4 w-full object-cover h-48" />
+        <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
+          {product.name}
+        </h2>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="mt-4 w-full object-cover h-48"
+        />
         <div className="mt-4">
           <label htmlFor="ticketCount" className="text-gray-700 mr-2">
             No. of Tickets:
@@ -76,25 +91,30 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
             className="border border-gray-300 rounded-md px-3 py-1"
           />
         </div>
-        <div className="mt-4">
-          <label htmlFor="ticketCategory" className="text-gray-700 mr-2">
-            Type
-          </label>
-          <select
-            id="ticketCategory"
-            value={ticketCategory}
-            onChange={(e) => setTicketCategory(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-1"
-          >
-            <option value="Regular">Regular</option>
-            <option value="VIP">VIP</option>
-            <option value="VVIP">VVIP</option>
-            {/* Add more ticket categories if needed */}
-          </select>
+        <div className="mt-3 ml-2 ">
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Ticket Category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="regular">Regular</SelectItem>
+              <SelectItem value="advance">Advance</SelectItem>
+              <SelectItem value="vip">VIP</SelectItem>
+              <SelectItem value="vvip">VVIP</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         <div className="mt-4 flex justify-around gap-4">
-          <Button onClick={onClose} className="bg-gray-300 mt-14 hover:bg-slate-900 hover:text-white px text-gray-800 font-bold rounded-md ">Close</Button>
-          <PaymentMethod amount={product.price * ticketCount} onSuccess={handleBuyTickets} />
+          <Button
+            onClick={onClose}
+            className="bg-gray-300 mt-14 hover:bg-slate-900 hover:text-white px text-gray-800 font-bold rounded-md "
+          >
+            Close
+          </Button>
+          <PaymentMethod
+            amount={product.price * ticketCount}
+            onSuccess={handleBuyTickets}
+          />
         </div>
       </div>
     </div>

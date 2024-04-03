@@ -1,5 +1,5 @@
 import { SidebarLink } from "@/components/SidebarItems";
-import { Cog, Globe, HomeIcon } from "lucide-react";
+import { Cog, CalendarPlus , HomeIcon } from "lucide-react";
 
 type AdditionalLinks = {
   title: string;
@@ -8,7 +8,7 @@ type AdditionalLinks = {
 
 export const defaultLinks: SidebarLink[] = [
   { href: "/dashboard", title: "Dashboard", icon: HomeIcon },
-  { href: "/account", title: "Account", icon: Cog },
+  { href: "/dashboard", title: "Events", icon: CalendarPlus  },
   { href: "/settings", title: "Settings", icon: Cog },
 ];
 
