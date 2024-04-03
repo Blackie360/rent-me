@@ -5,14 +5,15 @@ import ProductMenu from '@/components/ProductMenu';
 import PaymentMethod from '../../components/payment';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import  Select  from '@/components/ui/select';
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select"
 
 
 interface Product {
@@ -56,53 +57,40 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
           className="mt-4 w-full object-cover h-48"
         />
         <div className="mt-4">
-          <label htmlFor="ticketCount" className="text-gray-700 mr-2">
-            No. of Tickets:
+        <label htmlFor="username" className="text-gray-700 mr-2">
+            No. of Tickets :
           </label>
           <Input
             type="number"
             id="ticketCount"
+            placeholder='Enter number of tickets'
             value={ticketCount}
             onChange={(e) => onTicketCountChange(parseInt(e.target.value))}
             className="border border-gray-300 rounded-md px-3 py-1"
           />
         </div>
         <div className="mt-4">
-          <label htmlFor="email" className="text-gray-700 mr-2">
-            Email:
-          </label>
           <Input
             type="email"
             id="email"
             value={email}
+            placeholder='Enter email address'
             onChange={(e) => setEmail(e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-1"
           />
         </div>
         <div className="mt-4">
-          <label htmlFor="username" className="text-gray-700 mr-2">
-            Username:
-          </label>
           <Input
             type="text"
             id="username"
             value={username}
+            placeholder='Enter username'
             onChange={(e) => setUsername(e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-1"
           />
         </div>
-        <div className="mt-3 ml-2 ">
-          <Select>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Ticket Category" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="regular">Regular</SelectItem>
-              <SelectItem value="advance">Advance</SelectItem>
-              <SelectItem value="vip">VIP</SelectItem>
-              <SelectItem value="vvip">VVIP</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className="mt-50 mr-2 ">
+         <Select />
         </div>
         <div className="mt-4 flex justify-around gap-4">
           <Button
