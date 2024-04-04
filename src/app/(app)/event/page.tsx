@@ -33,7 +33,6 @@ interface EventProps {
   categories: string[]; // Adjust the type definition based on your actual data structure
 }
 
-
 const Event: React.FC<EventProps> = ({ initialData, categories }) => {
   const params = useParams();
   const router = useRouter();
@@ -93,23 +92,17 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
           className="space-y-8 w-full"
         >
           <FormField
-  control={form.control}
-  name="imgUrl"
-  render={({ field }) => (
-    <FormItem>
-      <FormControl>
-        <FileUpload
-          // onChange={files => field.onChange(files)}
-          // value={field.value}
-          // onRemove={(removedFile, allFiles) =>
-          //   field.onChange(allFiles.filter(file => file !== removedFile))
-          // }
-        />
-      </FormControl>
-      <FormMessage />
-    </FormItem>
-  )}
-/>
+            control={form.control}
+            name="imgUrl"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <FileUpload />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <div className="md:grid md:grid-cols-3 gap-8">
             <FormField
               control={form.control}
@@ -124,7 +117,7 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="description"
               render={({ field }) => (
@@ -136,8 +129,7 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
                   <FormMessage />
                 </FormItem>
               )}
-            /> 
-        
+            />
             <FormField
               control={form.control}
               name="price"
@@ -152,10 +144,10 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
               )}
             />
 
-<div className="grid w-full gap-1.5">
-      <Label htmlFor="message">Description</Label>
-      <Textarea placeholder="Type your message here." id="message" />
-    </div>
+            <div className="grid w-full gap-1.5">
+              <Label htmlFor="message">Description</Label>
+              <Textarea placeholder="Type your message here." id="message" />
+            </div>
 
             <FormField
               control={form.control}
@@ -163,7 +155,7 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Category</FormLabel>
-                  <Select/>
+                  <Select />
                   <FormMessage />
                 </FormItem>
               )}
@@ -171,8 +163,8 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
           </div>
         </form>
         <Button disabled={loading} className="ml-auto mt-20" type="submit">
-            {action}
-          </Button>
+          {action}
+        </Button>
       </Form>
     </>
   );
