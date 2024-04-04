@@ -8,7 +8,7 @@ export async function POST(request) {
   try {
     const { email, userFirstname } = await request.json();
 
-    const html = render(< WelcomeEmail userFirstname={userFirstname} />);
+    const html = render(<WelcomeEmail userFirstname={userFirstname} />);
 
     const { data, error } = await resend.emails.send({
       from: 'e-ticko <noreply@olivebishop.me>',
