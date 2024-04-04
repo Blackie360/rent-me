@@ -30,8 +30,9 @@ type EventFormValues = z.infer<typeof EventSchema>;
 
 interface EventProps {
   initialData: any | null;
-  categories: any;
+  categories: string[]; // Adjust the type definition based on your actual data structure
 }
+
 
 const Event: React.FC<EventProps> = ({ initialData, categories }) => {
   const params = useParams();
