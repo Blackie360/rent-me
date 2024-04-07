@@ -1,28 +1,43 @@
-// import { render } from '@react-email/components';
-// import WelcomeEmail from '../emails/WelcomeEmail';
-// import { Resend } from 'resend';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { Resend } from 'resend';
+import WelcomeEmailTemplate from '../../app/emails/WelcomeEmailTemplate';
+import { render } from '@react-email/components'; // Import the render function
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// export async function POST(request) {
-//   try {
-//     const { email, userFirstname } = await request.json();
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    if (req.method !== 'POST') {
+      return res.status(405).json({ error: 'Method Not Allowed' });
+    }
 
-//     const html = render(< WelcomeEmail userFirstname={userFirstname} />);
+    const { email } = req.body;
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required' });
+    }
 
-//     const { data, error } = await resend.emails.send({
-//       from: 'e-ticko <noreply@olivebishop.me>',
-//       to: [email],
-//       subject: 'Thank you for e-ticko events ticket purchase!',
-//       html: html,
-//     });
+    // Render the WelcomeEmail component
+    
+    const emailContent = render(WelcomeEmailTemplate({ userFirstname: "olive", ticketId: "123456" }));
 
-//     if (error) {
-//       return new Response(JSON.stringify({ error }), { status: 500 });
-//     }
 
-//     return new Response(JSON.stringify({ data }), { status: 200 });
-//   } catch (error) {
-//     return new Response(JSON.stringify({ error }), { status: 500 });
-//   }
-// }
+    
+    console.log('Sending email:', emailContent); // Log the email content for debugging
+
+    // Send the email using Resend
+    const response = await resend.emails.send({
+      from: 'e-ticko <noreply@olivebishop.me>',
+      to: [email],
+      reply_to: 'support@olivebishop.me',
+      subject: 'Thank you for using e-ticko events ticket purchase!',
+      react: emailContent,
+    });
+
+    console.log('Email response:', response); // Log the email send response for debugging
+
+    return res.status(200).json({ status: 200, message: 'Email sent successfully' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+}

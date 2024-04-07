@@ -13,7 +13,7 @@ import { useToast } from "../../../components/ui/use-toast";
 import { Input } from '@/components/ui/input';
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label";
-import FileUpload from "@/components/ui/file-upload"; // Import the FileUpload component
+import FileUpload from "@/components/ui/file-upload"; 
 
 const EventSchema = z.object({
   name: z.string().min(3, { message: "Event Name must be at least 3 characters" }),
