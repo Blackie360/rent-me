@@ -1,4 +1,3 @@
-'use client';
 import * as z from "zod";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,9 +32,7 @@ interface EventProps {
   categories: string[]; // Adjust the type definition based on your actual data structure
 }
 
-
 const EventPage: React.FC<EventProps> = ({ initialData, categories }) => {
-  const params = useParams();
   const router = useRouter();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
@@ -145,6 +142,7 @@ const EventPage: React.FC<EventProps> = ({ initialData, categories }) => {
               )}
             />
 
+            {/* This div doesn't seem to be related to any form field */}
             <div className="grid w-full gap-1.5">
               <Label htmlFor="message">Description</Label>
               <Textarea placeholder="Type your message here." id="message" />
