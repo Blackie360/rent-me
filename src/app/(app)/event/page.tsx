@@ -1,3 +1,46 @@
+import React from 'react'
+
+function page() {
+  return (
+    <div>
+      <p className='text-center mt-4'>Events</p>
+    </div>
+  )
+}
+
+export default page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 'use client';
 // import * as z from "zod";
 // import { useState } from "react";
