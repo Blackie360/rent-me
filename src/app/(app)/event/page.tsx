@@ -33,7 +33,7 @@ interface EventProps {
   categories: string[]; // Adjust the type definition based on your actual data structure
 }
 
-const Event: React.FC<EventProps> = ({ initialData, categories }) => {
+const Page: React.FC<EventProps> = ({ initialData, categories }) => {
   const params = useParams();
   const router = useRouter();
   const { toast } = useToast();
@@ -170,4 +170,4 @@ const Event: React.FC<EventProps> = ({ initialData, categories }) => {
   );
 };
 
-export default Event;
+export default Page;
