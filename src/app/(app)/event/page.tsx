@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label";
 import FileUpload from "@/components/ui/file-upload"; 
 
-const EventsSchema = z.object({
+const EventSchema = z.object({
   name: z.string().min(3, { message: "Event Name must be at least 3 characters" }),
   imgUrl: z
     .array(z.string())
@@ -26,14 +26,15 @@ const EventsSchema = z.object({
   category: z.string().min(1, { message: "Please select a category" }),
 });
 
-type EventsFormValues = z.infer<typeof EventsSchema>;
+type EventFormValues = z.infer<typeof EventSchema>;
 
-interface EventsProps {
+interface EventProps {
   initialData: any | null;
   categories: string[]; // Adjust the type definition based on your actual data structure
 }
 
-const Page: React.FC<EventsProps> = ({ initialData, categories }) => {
+
+const EventPage: React.FC<EventProps> = ({ initialData, categories }) => {
   const params = useParams();
   const router = useRouter();
   const { toast } = useToast();
@@ -53,12 +54,12 @@ const Page: React.FC<EventsProps> = ({ initialData, categories }) => {
         category: "",
       };
 
-  const form = useForm<EventsFormValues>({
-    resolver: zodResolver(EventsSchema),
+  const form = useForm<EventFormValues>({
+    resolver: zodResolver(EventSchema),
     defaultValues,
   });
 
-  const onSubmit = async (data: EventsFormValues) => {
+  const onSubmit = async (data: EventFormValues) => {
     try {
       setLoading(true);
       // Handle form submission
@@ -170,4 +171,4 @@ const Page: React.FC<EventsProps> = ({ initialData, categories }) => {
   );
 };
 
-export default Page;
+export default EventPage;
