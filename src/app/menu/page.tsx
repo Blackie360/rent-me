@@ -173,7 +173,7 @@ function Page() {
       {showModal && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center">
           <div className="flex items-center justify-center h-screen">
-            <div className="bg-white rounded-lg p-6">
+            <div className="bg-white text-slate-900 rounded-lg p-6">
               <ProductDetailsModal
                 product={selectedProduct!}
                 ticketCount={ticketCount}
