@@ -47,9 +47,9 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
         <img
           src={product.image}
           alt={product.name}
-          className="mt-4 w-full object-cover h-48"
+          className="mt-4 w-full object-cover h-48 "
         />
-        <div className="mt-4">
+        <div className="mt-4 ">
         <label htmlFor="username" className="text-gray-700 mr-2">
             No. of Tickets :
           </label>
@@ -59,7 +59,7 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
             placeholder='Enter number of tickets'
             value={ticketCount}
             onChange={(e) => onTicketCountChange(parseInt(e.target.value))}
-            className="border border-gray-300 rounded-md px-3 py-1"
+            className="border border-gray-300 rounded-md px-3 py-1 text-white" 
           />
         </div>
         <div className="mt-4">
@@ -69,7 +69,7 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
             value={email}
             placeholder='Enter email address'
             onChange={(e) => setEmail(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-1"
+            className="border border-gray-300 rounded-md px-3 py-1 text-white"
           />
         </div>
         <div className="mt-4">
@@ -79,7 +79,7 @@ function ProductDetailsModal({ product, ticketCount, onTicketCountChange, onBuyT
             value={username}
             placeholder='Enter username'
             onChange={(e) => setUsername(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-1"
+            className="border border-gray-300 rounded-md px-3 py-1 text-white"
           />
         </div>
         <div className="mt-50 mr-2 ">
