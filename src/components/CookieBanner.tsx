@@ -9,18 +9,32 @@ declare global {
   }
 }
 
+
+
 export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(false);
+  const [storedCookieConsent, setStoredCookieConsent] = useState<boolean>(false);
+ 
+  useEffect(() => {
+    const storedValue = getLocalStorage("cookie_consent", false);
+    setStoredCookieConsent(storedValue);
+  }, []);
+
   useEffect(() => {
     const newValue = cookieConsent ? "granted" : "denied";
     const analytics_storage = { analytics_storage: newValue };
-  
-    try {
-      window.gtag("consent", "update", analytics_storage);
-    } catch (error) {
-      console.error("Error updating consent:", error);
+
+    // Check if window.gtag is defined before invoking it
+    if (typeof window.gtag === "function") {
+      try {
+        window.gtag("consent", "update", analytics_storage);
+      } catch (error) {
+        console.error("Error updating consent:", error);
+      }
+    } else {
+      console.warn("window.gtag is not defined.");
     }
-  
+
     setLocalStorage("cookie_consent", cookieConsent);
     console.log("Cookie Consent: ", cookieConsent);
   }, [cookieConsent]);
