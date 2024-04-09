@@ -2,6 +2,13 @@
 import Link from "next/link";
 import { getLocalStorage, setLocalStorage } from "../utils/Helper";
 import { useEffect, useState } from "react";
+
+declare global {
+  interface Window {
+    gtag?: (key: string, action: string, config: any) => void;
+  }
+}
+
 export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(false);
   useEffect(() => {
