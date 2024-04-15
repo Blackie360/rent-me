@@ -38,8 +38,8 @@ export default function LandingPage() {
               <Image src={oneImage} alt="one" className="mx-auto aspect-video overflow-hidden bg-neutral-100 dark:bg-neutral-800 rounded-xl object-cover object-center sm:w-full lg:order-last lg:aspect-square" />
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Unlock Unforgettable Experiences of - <br />
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none">
+                  Unlock Unforgettable Experiences of <br />
                   <span className= "text-2xl mb-2 tracking-tighter xl:text-4xl/none">Events & Festival Ticket Sales.</span>
                   </h1>
                   <p className="max-w-[600px] text-neutral-500 md:text-xl dark:text-neutral-400">
@@ -110,7 +110,7 @@ export default function LandingPage() {
       </li>
 
       <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-        <a href="#" className="group relative block ">
+        <a href="/menu" className="group relative block ">
           <img
             src="https://storage.googleapis.com/m_tickets/assets/event_poster/light-shift-2024-03-18T13-33-09.278952.jpeg"
             alt=""
