@@ -5,7 +5,7 @@ import ProductMenu from '@/components/ProductMenu';
 import PaymentMethod from '../../components/payment';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import  Select  from '@/components/ui/select';
+import  Select  from '@/components/ui/selecto';
 
 
 
