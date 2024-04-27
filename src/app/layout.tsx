@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "e-ticko | Events & Tickets made easy",
+  title: "Pata Keja",
   description: "The best event & ticket platform in town",
 };
 

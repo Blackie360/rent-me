@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
 const MODEL_NAME = "gemini-1.5-pro-latest";
-const API_KEY = "AlzaSyAKdCnnVK4JuRDkiO5hcY2j9cqEBZdw2Es";
+const API_KEY = "AIzaSyAKdCnnVK4JuRDkiO5hcY2j9cqEBZdw2Es";
 
 export default function GenerativeAIPage() {
   const [inputText, setInputText] = useState("");
@@ -58,7 +58,7 @@ export default function GenerativeAIPage() {
 
   return (
     <div className={`min-h-screen py-6 px-4 sm:px-6 lg:px-8 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
-      <h1 className="text-2xl font-bold mb-4">Google Generative AI</h1>
+      <h1 className="text-2xl font-bold mb-4">pata keja AI</h1>
       <label className="block mb-2">
         <input
           type="checkbox"
