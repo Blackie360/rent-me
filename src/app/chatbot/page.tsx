@@ -55,7 +55,6 @@ export default function GenerativeAIPage() {
     setGeneratedText(response.text());
    
   }
-
   return (
     <div className={`min-h-screen py-6 px-4 sm:px-6 lg:px-8 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
       <h1 className="text-2xl font-bold mb-4">pata keja AI</h1>
@@ -86,8 +85,12 @@ export default function GenerativeAIPage() {
         </button>
       </form>
       <h2 className="text-lg font-semibold mb-2">Generated Text:</h2>
-      <p className="bg-white p-4 rounded-md shadow-sm">{generatedText}</p>
-      
+      <div className="flex flex-col space-y-2">
+        <div className="flex items-center justify-end">
+          <p className="bg-blue-500 text-white p-2 rounded-lg max-w-xs break-all">{generatedText}</p>
+        </div>
+        {/* Add more chat bubbles for additional messages if needed */}
+      </div>
     </div>
   );
-}
+}  
