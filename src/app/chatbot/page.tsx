@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
 const MODEL_NAME = "gemini-1.5-pro-latest";
-const API_KEY = "AIzaSyC9odjRJ0-5RXa63Q6n6q7QEsmJWhE4E9A";
+const API_KEY = "AlzaSyAKdCnnVK4JuRDkiO5hcY2j9cqEBZdw2Es";
 
 export default function GenerativeAIPage() {
   const [inputText, setInputText] = useState("");
