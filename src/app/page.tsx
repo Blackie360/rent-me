@@ -1,19 +1,16 @@
-
 // 'use client'
 import Link from "next/link";
-import oneImage from "../../public/one.jpg"
-import twoImage from "../../public/two.jpg"
-import Image from 'next/image'
-
-
+import oneImage from "../../public/one.jpg";
+import twoImage from "../../public/two.jpg";
+import Image from 'next/image';
 
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
        <header className="px-4 lg:px-6 h-14 flex items-center">
         <Link className="flex items-center justify-center" href="/">
-          <MountainIcon className="h-6 w-6" />
-          <span className="sr-only sm:not-sr-only gap-1 text-white">e-ticko</span>
+          <HouseIcon className="h-6 w-6" />
+          <span className="sr-only sm:not-sr-only gap-1 text-white">Rent A House</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
@@ -35,29 +32,29 @@ export default function LandingPage() {
         <section className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <Image src={oneImage} alt="one" className="mx-auto aspect-video overflow-hidden bg-neutral-100 dark:bg-neutral-800 rounded-xl object-cover object-center sm:w-full lg:order-last lg:aspect-square" />
+              {/* <img src="https://pixabay.com/photos/villa-house-grim-dark-old-villa-3237114/" alt="one" className="mx-auto aspect-video overflow-hidden bg-neutral-100 dark:bg-neutral-800 rounded-xl object-cover object-center sm:w-full lg:order-last lg:aspect-square" /> */}
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none">
-                  Unlock Unforgettable Experiences of <br />
-                  <span className= "text-2xl mb-2 tracking-tighter xl:text-4xl/none">Events & Festival Ticket Sales.</span>
+                  Find Your Ideal Rental House <br />
+                  <span className= "text-2xl mb-2 tracking-tighter xl:text-4xl/none">Discover Your Dream Home</span>
                   </h1>
                   <p className="max-w-[600px] text-neutral-500 md:text-xl dark:text-neutral-400">
-                  Equip your team with the resources to revolutionize ticket sales. Effortlessly develop, deploy, and expand your event and festival ticketing operations while maintaining paramount security measures.
+                  Browse through a wide range of rental properties. Your perfect home is just a click away!
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
                     className="inline-flex h-10 items-center justify-center rounded-md bg-neutral-900 px-8 text-sm font-medium text-neutral-50 shadow transition-colors hover:bg-neutral-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90 dark:focus-visible:ring-neutral-300"
-                    href="/sign-up"
+                    href="/search"
                   >
-                    Get Started
+                    Search Now
                   </Link>
                   <Link
                     className="inline-flex h-10 items-center justify-center rounded-md border border-neutral-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-950 dark:focus-visible:ring-neutral-300 duration-300 ease-in-out"
-                    href="/menu"
+                    href="/listings"
                   >
-                    Events
+                    View Listings
                   </Link>
                 </div>
               </div>
@@ -65,71 +62,7 @@ export default function LandingPage() {
           </div>
         </section>
         <section>
-  <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-    <header className="text-center">
-    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Featured Events</h2>
-    </header>
-
-    <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
-      <li>
-        <a href="#" className="group relative block mb-4">
-          <img
-            src="https://storage.googleapis.com/m_tickets/assets/event_poster/maseke-ya-nai2024-02-26T20-38-42.989710.jpg"
-            alt=""
-            className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-          />
-
-          <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-      
-            <span
-              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
-            >
-              Get Tickets
-            </span>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#" className="group relative block mb-4">
-          <img
-           src="https://storage.googleapis.com/m_tickets/assets/event_poster/park-and-chill-naivasha2024-03-29T20-36-13.894109.jpeg"
-            alt=""
-            className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-          />
-
-          <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-           
-            <span
-              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
-            >
-             Get Tickets
-            </span>
-          </div>
-        </a>
-      </li>
-
-      <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-        <a href="/menu" className="group relative block ">
-          <img
-            src="https://storage.googleapis.com/m_tickets/assets/event_poster/light-shift-2024-03-18T13-33-09.278952.jpeg"
-            alt=""
-            className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-          />
-
-          <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-            {/* <h3 className="text-xl font-medium text-white">Skinny Jeans Blue</h3> */}
-
-            <span
-              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
-            >
-              Get Tickets
-            </span>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
+ 
 </section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
@@ -139,10 +72,10 @@ export default function LandingPage() {
                   Key Features
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Streamlined Ticketing & Event Management
+                Discover Your Perfect Home
                 </h2>
                 <p className="max-w-[900px] text-neutral-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-neutral-400">
-                Accelerate your event management with our platform. Streamline ticketing processes and empower admins to effortlessly post and update events. Let your team concentrate on enhancing user experiences and expanding event offerings, while our automated CI/CD handles the backend seamlessly.
+                Find a rental property that meets all your needs. Our platform offers a seamless experience for finding and renting houses.
                 </p>
               </div>
             </div>
@@ -152,25 +85,25 @@ export default function LandingPage() {
                 <ul className="grid gap-6">
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Event Managers</h3>
+                      <h3 className="text-xl font-bold">Wide Selection</h3>
                       <p className="text-neutral-500 dark:text-neutral-400">
-                        Sign Up , Create  an event Pap !
+                        Browse through a variety of rental properties.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Users</h3>
+                      <h3 className="text-xl font-bold">Easy Booking</h3>
                       <p className="text-neutral-500 dark:text-neutral-400">
-                        We Offer you with seamless , affordable and endless events.
+                        Book your rental house with ease.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Payment</h3>
+                      <h3 className="text-xl font-bold">Secure Payments</h3>
                       <p className="text-neutral-500 dark:text-neutral-400">
-                        Receive payments without delays.
+                        Pay for your rental securely.
                       </p>
                     </div>
                   </li>
@@ -180,39 +113,11 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-                  Sign Up for Updates
-                </h2>
-                <p className="max-w-[600px] text-neutral-500 md:text-xl dark:text-neutral-400">
-                  Stay updated with the latest product news and updates.
-                </p>
-              </div>
-              <div className="w-full max-w-sm space-y-2">
-                <form className="flex sm:flex-row flex-col space-y-2 sm:space-y-0 sm:space-x-2">
-                  <input
-                    className="max-w-lg flex-1 px-4 py-2 border-border border rounded-md "
-                    placeholder="Enter your email"
-                    type="email"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-neutral-900 px-4 text-sm font-medium text-neutral-50 shadow transition-colors hover:bg-neutral-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90 dark:focus-visible:ring-neutral-300"
-                  >
-                    Sign Up
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+       
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-neutral-500 dark:text-neutral-400">
-          © 2024 Eticko. All rights reserved.
+          © 2024 Rent A House. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
@@ -227,7 +132,7 @@ export default function LandingPage() {
   );
 }
 
-function MountainIcon(props: any) {
+function HouseIcon(props: any) {
   return (
     <svg
       {...props}
@@ -241,7 +146,8 @@ function MountainIcon(props: any) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      <path d="M20 9.8V21a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.8L12 2l8 7.8z" />
+      <path d="M12 2V9.8L4 17l8 7 8-7-8-7.2V2z" />
     </svg>
   );
 }

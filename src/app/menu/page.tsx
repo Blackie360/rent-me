@@ -111,26 +111,24 @@ function Page() {
     {
       id: 1,
       name: "Vasha Fest",
-      image: "https://storage.googleapis.com/m_tickets/assets/event_poster/park-and-chill-naivasha2024-03-29T20-36-13.894109.jpeg",
+      image: "https://www.property24.co.ke/2-bedroom-apartment-flat-to-rent-in-nyali-114303621",
       price: 5000,
     },
     {
       id: 2,
       name: "Glory Fight",
-      image: "https://storage.googleapis.com/m_tickets/assets/event_poster/ultimate-glory-fight2024-03-21T14-09-43.403674.jpeg",
+      image: "https://www.property24.co.ke/3-bedroom-apartment-flat-to-rent-in-nyali-114309373",
       price: 7800,
     },
     {
       id: 3,
       name: "Kairo",
-      image: "https://storage.googleapis.com/m_tickets/assets/event_poster/battle-of-x-khalif-kairo-vs-polo-kimani-2024-03-05T14-18-58.648089.jpg",
-      price: 1000,
+      image: "https://www.property24.co.ke/3-bedroom-apartment-flat-to-rent-in-nyali-114309373",      price: 1000,
     },
     {
       id: 4,
       name: "Piano Fest",
-      image: "https://storage.googleapis.com/m_tickets/assets/event_poster/kite-piano-fest-2024-03-15T09-03-30.403012.jpeg",
-      price: 600,
+      image: "https://www.property24.co.ke/3-bedroom-apartment-flat-to-rent-in-nyali-114309373",      price: 600,
     },
   ];
 

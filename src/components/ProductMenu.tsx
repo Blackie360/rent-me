@@ -5,7 +5,7 @@ function ProductMenu() {
   const products = [
     {
       id: 1,
-      imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/park-and-chill-naivasha2024-03-29T20-36-13.894109.jpeg",
+      imageUrl: "https://unsplash.com/photos/a-living-room-with-a-white-couch-and-a-large-window-2ld4scSpnzM",
       name: "Park & Chill",
       price: "ksh. 2600/-",
       location: "Naivasha",
@@ -13,7 +13,7 @@ function ProductMenu() {
     },
     {
       id: 2,
-      imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/light-shift-2024-03-18T13-33-09.278952.jpeg",
+      imageUrl: "https://images.unsplash.com/photo-1635286721033-e11cf9e632c4?q=80&w=2004&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       name: "Light Shift",
       price: "ksh. 3000/-",
       location: "KORR STABLES",
@@ -21,7 +21,7 @@ function ProductMenu() {
     },
     {
       id: 3,
-      imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/the-jig-gig2024-03-16T10-14-02.400971.jpg",
+      imageUrl: "https://www.property24.co.ke/3-bedroom-apartment-flat-to-rent-in-nyali-114320134",
       name: "Another Toy",
       price: "ksh. 2500/-",
       location: "PIXXEL YARD",
@@ -30,26 +30,26 @@ function ProductMenu() {
     // Add more products as needed
     {
       id: 4,
-      imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/portable-live2024-03-27T18-28-44.917670.jpeg",
-      name: "PORTABLE LIVE",
+      imageUrl: "https://www.property24.co.ke/3-bedroom-apartment-flat-to-rent-in-nyali-114309424",
+      name: "mikindani",
       price: "ksh. 1500/-",
       location: "Kitchenette, Kanjata Street",
       isNew: true
     },
     {
       id: 5,
-      imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/4th-all-africa-congress2024-03-22T19-10-32.469228.jpeg",
-      name: "4TH ALL AFRICA CONGRESS",
+      imageUrl: "https://www.property24.co.ke/2-bedroom-apartment-flat-to-rent-in-nyali-114303621",
+      name: "bamburi",
       price: "ksh. 0/-",
-      location: "Arusha, Tanzania",
+      location: "mombasa",
       isNew: true
     },
     {
       id: 6,
-      imageUrl: "https://storage.googleapis.com/m_tickets/assets/event_poster/boomfest-20242024-03-19T19-52-14.390272.jpg",
-      name: "BOOMFEST 2024",
+      imageUrl: "https://www.property24.co.ke/3-bedroom-apartment-flat-to-rent-in-nyali-114309373",
+      name: "BOOMFEST ",
       price: "ksh. 3000/-",
-      location: "THE A.S.K DOME",
+      location: "Miritini",
       isNew: true
     },
     // Add more products as needed
@@ -59,11 +59,7 @@ function ProductMenu() {
     <div className='lg:flex flex-wrap justify-center gap-2 mb-12'>
       {products.map(product => (
         <div key={product.id} className="group relative overflow-hidden w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/4 mb-4">
-          <img
-            src={product.imageUrl}
-            alt=""
-            className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
-          />
+          
           <div className="relative border border-gray-100 bg-white p-6">
             <div className='flex justify-between items-center'>
               {product.isNew ? (
